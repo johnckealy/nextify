@@ -23,23 +23,22 @@ const Sidenav = () => {
   ]
 
   return (
-
     <div className="min-h-screen h-full">
       <div className="relative z-10 bg-background transition-all duration-500 ease-in-out min-h-screen w-[3.35rem] overflow-hidden border-r hover:w-56 hover:bg-white hover:shadow-lg">
         <div className="flex h-screen flex-col justify-between pt-2 pb-6">
           <div>
-            <Link href="/" className="w-max p-2.5"><a>
+            <Link href="/" className="w-max p-2.5">
               <Image className="h-8 p-5 w-auto sm:h-10" alt="Logo image" src="/logo.png" width={50} height={40} />
-              </a></Link>
+            </Link>
             <ul className="mt-6 space-y-2 tracking-wide">
               {links.map(({ href, label, Icon, active }) => (
                 <li key={label} className="min-w-max whitespace-nowrap">
                   <div aria-label={label} className={`relative flex items-center space-x-4 ${active ? 'bg-gradient-to-r from-sky-600 to-cyan-400 text-white' : 'text-textdefault'} px-4 py-3 text-textdefault `}>
                     <Icon className='h-5 w-5' />
-                    <Link href={href}>
-                      <a className='hover:text-[#7a7a7a]'>
-                        <span className="-mr-1 font-medium">{label}</span>
-                      </a>
+                    <Link href={href} className='hover:text-[#7a7a7a]'>
+
+                      <span className="-mr-1 font-medium">{label}</span>
+
                     </Link>
                   </div>
                 </li>

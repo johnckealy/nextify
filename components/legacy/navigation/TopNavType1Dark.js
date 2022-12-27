@@ -15,10 +15,10 @@ const Accordian = ({ item }) => {
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between p-1">
-              <Link href={item.href}>
-                <a key={item.heading}>
-                  {item.heading}
-                </a>
+              <Link href={item.href} key={item.heading}>
+
+                {item.heading}
+
               </Link>
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2">
@@ -43,7 +43,7 @@ const Accordian = ({ item }) => {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
 
 
@@ -54,13 +54,16 @@ const DropdownItems = ({ childItems }) => {
     <div className="hidden border-t-2 border-[#1abc9c] bg-[#505050] z-10 min-w-max mt-2 uppercase absolute group-hover:flex  flex-col drop-shadow-lg">
       {childItems.map((item) => {
         return (
-          <Link key={item.heading} href='/'>
-            <a className="px-5 py-3 text-xs text-[#efefef] mr-6 hover:text-[#1abc9c] transition-all hover:translate-x-0.5 duration-400 ease-in-out" >{item.heading}</a>
+          <Link
+            key={item.heading}
+            href='/'
+            className="px-5 py-3 text-xs text-[#efefef] mr-6 hover:text-[#1abc9c] transition-all hover:translate-x-0.5 duration-400 ease-in-out">
+            {item.heading}
           </Link>
-        )
+        );
       })}
     </div>
-  )
+  );
 }
 
 
@@ -74,10 +77,10 @@ export default function Navbar() {
 
             {/* Desktop */}
             <Link href="/">
-              <a>
-                <span className="sr-only">Back to Home</span>
-                <Image className="" alt="Logo image" src="/logo.svg" width={80} height={40} />
-              </a>
+
+              <span className="sr-only">Back to Home</span>
+              <Image className="" alt="Logo image" src="/logo.svg" width={80} height={40} />
+
             </Link>
           </div>
 
@@ -96,15 +99,18 @@ export default function Navbar() {
               return (
                 <div key={item.heading} className="group text-sm text-white  hover:text-[#1abc9c] ">
                   <div className='flex-col flex items-end'>
-                      <Link key={item.heading} href={item.href} >
-                        <a className="font-medium uppercase flex items-center ">
-                          <span className=''> {item.heading}</span>  {item.childItems && <FaChevronDown className="group-hover:rotate-180 transition duration-300 h-5 w-5 ml-2" />}
-                        </a>
+                      <Link
+                        key={item.heading}
+                        href={item.href}
+                        className="font-medium uppercase flex items-center ">
+
+                        <span className=''> {item.heading}</span>  {item.childItems && <FaChevronDown className="group-hover:rotate-180 transition duration-300 h-5 w-5 ml-2" />}
+
                       </Link>
                   </div>
                   {item.childItems && <DropdownItems childItems={item.childItems} />}
                 </div>
-              )}
+              );}
             )}
           </div>
           <div></div>
@@ -117,9 +123,9 @@ export default function Navbar() {
         <Popover.Panel className="absolute z-10 top-0 inset-x-0 transition transform origin-top-right md:hidden">
           <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
-              <Link href="/"><a>
+              <Link href="/">
                 <Image className="h-8 w-auto sm:h-10" alt="Logo image" src="/logo.svg" width={40} height={20} />
-              </a>
+
               </Link>
               <div className="-mr-2">
                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -135,12 +141,12 @@ export default function Navbar() {
                     {item.childItems ? <Accordian item={item} /> :
                       <div className="py-1 px-3">
                         <Link href={item.href}>
-                          <a>{item.heading}</a>
+                          {item.heading}
                         </Link>
                       </div>
                     }
                   </div>
-                )
+                );
               })}
             </div>
           </div>

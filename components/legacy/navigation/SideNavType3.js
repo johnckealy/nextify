@@ -9,42 +9,42 @@ export default function SideNav({ navHeader, children }) {
   const [open, setOpen] = useState(false)
 
   const SideNavInner = () => {
-    return (
-      <>
-        <button className="md:hidden absolute top-0 right-0 flex pt-4 pr-2 text-base hover:text-base-hover" onClick={() => setOpen(false)}>
-          <span className="sr-only">Close panel</span>
-          <XIcon className="h-10 w-10" aria-hidden="true" />
-        </button>
-        <div className="flex h-full flex-col min-w-max overflow-hidden bg-secondary-bg">
-          <div className="p-4 sm:px-6 ">
-            <Link href="/">
-              <a>
-                <HomeIcon className='hover:opacity-60 w-7 h-7 md:ml-auto' />
-              </a>
-            </Link>
-          </div>
-          <div className="relative mt-6 flex-1 space-y-4">
-            {navItems.map((item) => {
-              return (
-                <div key={item.name}>
-                  <Link href={item.href}>
-                    <a className="pl-6 md:pl-10 md:pr-28 flex px-3 py-2 hover:bg-default-bg hover:translate-x-1 transition">
-                      <div className='flex items-center gap-4'>
-                        <div className='text-xl'>{item.icon}</div>
-                        <div className='ml-4 flex flex-col'>
-                          <span>{item.heading}</span>
-                          <span className='text-xs italic opacity-50'>{item.subheading}</span>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
+    return <>
+      <button className="md:hidden absolute top-0 right-0 flex pt-4 pr-2 text-base hover:text-base-hover" onClick={() => setOpen(false)}>
+        <span className="sr-only">Close panel</span>
+        <XIcon className="h-10 w-10" aria-hidden="true" />
+      </button>
+      <div className="flex h-full flex-col min-w-max overflow-hidden bg-secondary-bg">
+        <div className="p-4 sm:px-6 ">
+          <Link href="/">
+
+            <HomeIcon className='hover:opacity-60 w-7 h-7 md:ml-auto' />
+
+          </Link>
         </div>
-      </>
-    )
+        <div className="relative mt-6 flex-1 space-y-4">
+          {navItems.map((item) => {
+            return (
+              <div key={item.name}>
+                <Link
+                  href={item.href}
+                  className="pl-6 md:pl-10 md:pr-28 flex px-3 py-2 hover:bg-default-bg hover:translate-x-1 transition">
+
+                  <div className='flex items-center gap-4'>
+                    <div className='text-xl'>{item.icon}</div>
+                    <div className='ml-4 flex flex-col'>
+                      <span>{item.heading}</span>
+                      <span className='text-xs italic opacity-50'>{item.subheading}</span>
+                    </div>
+                  </div>
+
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>;
   }
 
 

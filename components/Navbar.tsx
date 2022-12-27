@@ -6,24 +6,30 @@ import Link from 'next/link';
 import CTA from '@/components/common/CTA';
 import Image from 'next/image';
 
-const navItems = [
-  {
-    label: 'Home',
+const navItems = {
+  links: [
+    {
+      label: 'Home',
+      href: '/'
+    },
+    {
+      label: 'About',
+      href: '/about'
+    },
+    {
+      label: 'Services',
+      href: '/projects'
+    },
+    {
+      label: 'Contact',
+      href: '/contact'
+    }
+  ],
+  cta: {
+    label: 'Take Action',
     href: '/'
-  },
-  {
-    label: 'About',
-    href: '/about'
-  },
-  {
-    label: 'Services',
-    href: '/projects'
-  },
-  {
-    label: 'Contact',
-    href: '/contact'
   }
-]
+}
 
 
 interface NavbarProps {
@@ -47,17 +53,17 @@ const MobileMenu = () => {
           <DropdownMenu.Content>
             <div className="p-1 w-screen">
               <div className='py-2 bg-base-100 rounded-sm uppercase'>
-                {navItems.map((item) => {
+                {navItems.links.map((item) => {
                   return (
-                    <Link key={item.label} href={item.href}>
+                    <Link key={item.label} href={item.href} legacyBehavior>
                       <DropdownMenu.Item key={item.label} className='py-2 '>
                         <span className='px-3'>{item.label}</span>
                         <hr className='mt-2' />
                       </DropdownMenu.Item>
                     </Link>
-                  )
+                  );
                 })}
-                <Link href="/booking">
+                <Link href="/booking" legacyBehavior>
                   <button className='btn btn-primary rounded-xl font-sans ml-3'>Book a class</button>
                 </Link>
               </div>
@@ -66,36 +72,32 @@ const MobileMenu = () => {
         </DropdownMenu.Portal>
       </DropdownMenu.Root>
     </div>
-  )
+  );
 
 }
 
 
 
-const Navbar = ({className}: NavbarProps) => {
+const Navbar = ({ className }: NavbarProps) => {
   return (
-    <nav className={`navbar bg-white ${className}`}>
+    <nav className={`navbar ${className}`}>
       <div className='container'>
 
         <div className="flex-1">
-          <Link href="/">
-            <a className="">
-              <Image alt="logo image" className='w-auto' src="/logo.png" width={100} height={50} />
-            </a>
+          <Link href="/" className="">
+            <Image alt="logo image" className='' src="/next.svg" width={100} height={50} />
           </Link>
         </div>
 
         <ul className="hidden md:flex gap-5 font-alegreya">
-          {navItems.map((item) => {
+          {navItems.links.map((item) => {
             return (
-              <Link href={item.href} key={item.label} >
-                <a className=''>
-                  <li className='list-none m-4 font-sans'>{item.label}</li>
-                </a>
-              </Link>
-            )
+              (<Link href={item.href} key={item.label} className=''>
+                <li className='list-none m-4 font-sans'>{item.label}</li>
+              </Link>)
+            );
           })}
-          <CTA className="rounded-full px-8" href="/booking" >Take Action</CTA>
+          <CTA href={navItems.cta.href} >{navItems.cta.label}</CTA>
         </ul>
         <MobileMenu />
       </div>

@@ -17,11 +17,11 @@ interface Props {
 
 const Block = ({blockContent, className}: Props) => {
   return (
-    <div className={`${className} max-w-lg p-2`}>
-      <h2 className='uppercase'>{blockContent.title}</h2>
-      <hr className='border-t-[4px] border-primary my-5 w-14' />
+    <div className={`${className} max-w-lg p-2 text-center md:text-left`}>
+      <h2 className='leading-normal'>{blockContent.title}</h2>
+      <hr className='border-t-[4px] border-primary my-5 w-14 mx-auto md:mx-0' />
       <p className=''>{blockContent.description}</p>
-      <CTA className='my-8' href={blockContent.cta.href} >{blockContent.cta.label}</CTA>
+      <CTA className='my-10 mx-auto md:mx-0' href={blockContent.cta.href} >{blockContent.cta.label}</CTA>
     </div>
   );
 }
