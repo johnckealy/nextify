@@ -7,7 +7,6 @@ import Card from '@/components/themes/OutdoorAdventure/Card'
 import Block from '@/components/themes/OutdoorAdventure/Block'
 import Footer from '@/components/themes/OutdoorAdventure/Footer'
 
-
 const content = {
   hero: {
     image: '/images/hero-bg.jpg',
@@ -80,7 +79,7 @@ const Home = () => {
         {/* Hero block */}
         <div className=''>
           <Img src={`https://source.unsplash.com/Bkci_8qcdvQ`} alt="title image" >
-            <div className='absolute inset-0 bg-black opacity-30' />
+            <div className='absolute inset-0 bg-black opacity-40' />
             <div className='relative md:px-32 py-20 md:py-64 '>
               <div className='flex flex-col justify-center items-center'>
                 <div className='text-center text-white'>
@@ -119,6 +118,7 @@ const Home = () => {
           </div>
         </Img>
       </section>
+
 
 
       {/* Gallery block */}

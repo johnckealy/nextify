@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/themes/OutdoorAdventure/Hero";
 
+import Parallax from '@/components/common/Parallax'
 
 
 const content = {
@@ -15,10 +16,7 @@ const content = {
 const About = () => {
   return (
     <>
-      <div className=''>
-        {/* <Navbar className="z-10 bg-opacity-0 md:text-white" /> */}
-        <Hero content={content} />
-      </div>
+      <Parallax />
     </>
   );
 }
