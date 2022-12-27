@@ -17,7 +17,6 @@ interface cardContentProps {
 
 
 const Card = ({ cardContent }: cardContentProps) => {
-  console.log(cardContent)
   return (
     <div className='text-center'>
       <Img src={cardContent.imageSrc} alt="Card image" className="rounded-lg" containerClassName="h-44 md:h-96" />

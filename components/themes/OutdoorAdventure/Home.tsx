@@ -74,23 +74,26 @@ const content = {
 const Home = () => {
   return (
     <>
-      <Navbar className="z-10 bg-opacity-0 md:text-black" />
+      <div className='relative'>
+        <Navbar className="z-10  md:text-white absolute top-0" />
 
-
-      {/* Hero block */}
-      <Img src={`https://source.unsplash.com/Bkci_8qcdvQ`} alt="title image" className="">
-        <div className='absolute inset-0 bg-black opacity-30' />
-        <div className='relative md:px-32 py-20 md:py-44 '>
-          <div className='flex flex-col justify-center items-center'>
-            <div className='text-center text-white'>
-              <h2 className='text-white normal-case'>{content.hero.subtitle}</h2>
-              <hr className='border-t-4 border-primary w-16 mx-auto' />
-              <h1 className='uppercase font-montserrat font-bold'>{content.hero.title}</h1>
-              <CTA className='mx-auto mt-10' href={content.hero.cta.href}>{content.hero.cta.label}</CTA>
+        {/* Hero block */}
+        <div className=''>
+          <Img src={`https://source.unsplash.com/Bkci_8qcdvQ`} alt="title image" >
+            <div className='absolute inset-0 bg-black opacity-30' />
+            <div className='relative md:px-32 py-20 md:py-64 '>
+              <div className='flex flex-col justify-center items-center'>
+                <div className='text-center text-white'>
+                  <h2 className='text-white normal-case text-2xl'>{content.hero.subtitle}</h2>
+                  <hr className='border-t-4 border-primary w-16 mx-auto' />
+                  <h1 className='uppercase font-montserrat font-bold'>{content.hero.title}</h1>
+                  <CTA className='mx-auto mt-10' href={content.hero.cta.href}>{content.hero.cta.label}</CTA>
+                </div>
+              </div>
             </div>
-          </div>
+          </Img>
         </div>
-      </Img>
+      </div>
 
       <QuoteBlock author={content.quoteAuthor}>{content.quoteText}</QuoteBlock>
 

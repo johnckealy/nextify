@@ -20,7 +20,7 @@ const Img = ({ src, alt, className, containerClassName, priority, children }: Pr
         src={src}
         alt={alt}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className={`${className} object-cover transition duration-1000 ${isReady ? 'scale-100 blur-0' : 'scale-120 blur-xl bg-gray-400'}`}
+        className={`${className} object-cover transition duration-1000 ${isReady ? 'blur-0' : 'blur-xl bg-gray-400'}`}
         onLoadingComplete={() => setisReady(true)}
         fill
         priority={priority}
