@@ -8,7 +8,7 @@ interface cardContentProps {
     imageSrc: string,
     title: string,
     body: string,
-    cta: {
+    cta?: {
       label: string,
       href: string
     }
@@ -19,10 +19,10 @@ interface cardContentProps {
 const Card = ({ cardContent }: cardContentProps) => {
   return (
     <div className='text-center'>
-      <Img src={cardContent.imageSrc} alt="Card image" className="rounded-lg" containerClassName="h-44 md:h-96" />
+      <Img src={cardContent.imageSrc} alt="Card image" className="rounded-lg" containerClassName="h-40 md:h-72 " />
       <h3 className='text-black'>{cardContent.title}</h3>
       <p className='text-grey'>{cardContent.body}</p>
-      <CTA className='mx-auto m-4' href={cardContent.cta.href} >{cardContent.cta.label}</CTA>
+      {cardContent.cta && <CTA className='mx-auto m-4' href={cardContent.cta.href} >{cardContent.cta.label}</CTA>}
     </div>
   );
 }

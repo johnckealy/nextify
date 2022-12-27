@@ -5,23 +5,25 @@ import CTA from '@/components/common/CTA';
 interface Props {
   blockContent: {
     title: string,
-    description: string,
-    cta: {
+    description?: string,
+    cta?: {
       label: string,
       href: string
     }
   },
-  className?: string
+  className?: string,
+  children?: React.ReactNode,
+  useHr?: boolean
 }
 
 
-const Block = ({blockContent, className}: Props) => {
+const Block = ({blockContent, className, children, useHr=true}: Props) => {
   return (
-    <div className={`${className} max-w-lg p-2 text-center md:text-left`}>
-      <h2 className='leading-normal'>{blockContent.title}</h2>
-      <hr className='border-t-[4px] border-primary my-5 w-14 mx-auto md:mx-0' />
+    <div className={`${className} max-w-lg p-2 text-center md:text-left flex flex-col items-center md:items-start`}>
+      {children}
+      {useHr && <hr className='border-t-[4px] border-primary md:my-1 w-14' />}
       <p className=''>{blockContent.description}</p>
-      <CTA className='my-10 mx-auto md:mx-0' href={blockContent.cta.href} >{blockContent.cta.label}</CTA>
+      {blockContent?.cta && <CTA className='my-10' href={blockContent.cta.href} >{blockContent.cta.label}</CTA>}
     </div>
   );
 }

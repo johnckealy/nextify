@@ -12,7 +12,7 @@ import Parallax from '@/components/common/Parallax'
 
 const content = {
   hero: {
-    image: '/images/hero-bg.jpg',
+    image: 'https://source.unsplash.com/0DtcZKzrP6Y/w=1500',
     title: 'A Wonderful Gift',
     subtitle: 'Explore the Colourful World',
     cta: {
@@ -81,12 +81,12 @@ const Home = () => {
 
         {/* Hero block */}
         <div className=''>
-          <Img src={`https://source.unsplash.com/Bkci_8qcdvQ`} alt="title image" priority>
+          <Img src={content.hero.image} alt="title image" priority fullWidth>
             <div className='absolute inset-0 bg-black opacity-40' />
             <div className='relative md:px-32 py-20 md:py-64 '>
               <div className='flex flex-col justify-center items-center'>
                 <div className='text-center text-white'>
-                  <h2 className='text-white normal-case text-2xl'>{content.hero.subtitle}</h2>
+                  <h2 className='text-white normal-case text-lg md:text-2xl'>{content.hero.subtitle}</h2>
                   <hr className='border-t-4 border-primary w-16 mx-auto' />
                   <h1 className='uppercase font-montserrat font-bold'>{content.hero.title}</h1>
                   <CTA className='mx-auto mt-10' href={content.hero.cta.href}>{content.hero.cta.label}</CTA>
@@ -100,7 +100,7 @@ const Home = () => {
       <QuoteBlock author={content.quoteAuthor}>{content.quoteText}</QuoteBlock>
 
       {/* Cards Section */}
-      <section className='container py-10'>
+      <section className='container py-10 max-w-7xl'>
         <Heading>{content.cardsHeader}</Heading>
         <div className='sgrid'>
           {content.cards.map((card, index) => (
@@ -110,7 +110,7 @@ const Home = () => {
       </section>
 
 
-      {/* Section with background image and Block */}
+      {/* Section Block with Parallax background */}
       {/* <section className='md:my-20'>
         <Parallax imgSrc="https://source.unsplash.com/s-y2HJElONo/w=1000" className="h-[500px]" >
             <div className='container sgrid gap-0'>
@@ -119,12 +119,16 @@ const Home = () => {
         </Parallax>
       </section> */}
 
+
+      {/* Section with background image and Block */}
       <section className='md:my-20'>
-        <Img src={content.block1.image} alt="" className="">
+        <Img src={content.block1.image} alt="" className="" >
           <div className='absolute inset-0 bg-black opacity-50' />
           <div className='relative py-10 md:px-32 md:py-44 '>
             <div className='sgrid gap-0 '>
-              <Block blockContent={content.block1} className="text-white" />
+              <Block blockContent={content.block1} className="text-white">
+                <h2>{content.block1.title}</h2>
+              </Block>
             </div>
           </div>
         </Img>
@@ -135,7 +139,9 @@ const Home = () => {
       {/* Gallery block */}
       <section className='container my-10 md:my-32 md:pt-20'>
         <div className='sgrid lg:grid-cols-3 place-items-start'>
-          <Block blockContent={content.block2} className="md:px-8" />
+          <Block blockContent={content.block2} className="md:px-8" >
+            <h2 className=''>{content.block1.title}</h2>
+          </Block>
           <div className='space-y-10 w-full'>
             <Img src={content.gallery.image1} alt="" containerClassName="h-[250px]" className="ring w-full object-cover" />
             <Img src={content.gallery.image2} alt="" containerClassName="h-[350px]" className="w-full h-[400px] object-cover" />
