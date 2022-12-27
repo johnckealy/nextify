@@ -1,100 +1,25 @@
-import Img from '@/components/Img'
-import Image from 'next/image'
 
-const Parallax = () => {
+
+interface Props {
+  imgSrc: string;
+  children?: React.ReactNode;
+  className?: string;
+}
+
+
+const BackgroundParallax = ({ imgSrc, children, className }: Props) => {
   return (
     <>
-      <div
-        style={{
-          position: 'relative',
-          height: '60vh',
-          width: '100%',
-          clipPath: 'inset(0 0 0 0)',
-        }}
-      >
-        <div
-          style={{
-            position: 'fixed',
-            height: '100%',
-            width: '100%',
-            left: '0',
-            top: '0',
-          }}
-        >
-          <Image
-            src="https://source.unsplash.com/s-y2HJElONo/w=1000"
-            fill
-            sizes="100vw"
-            className='object-cover'
-            alt=""
-          />
+      <div className="relative overflow-hidden">
+        <div style={{ backgroundImage: `url("${imgSrc}")` }} className={`${className} w-full bg-fixed bg-cover bg-center`}>
+          <div className="bg-black opacity-50 h-full w-full" />
+          <div className="absolute inset-0  flex justify-center items-center">
+            {children}
+          </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <section>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis repellat a distinctio, cumque quam ipsam reiciendis? Aliquid, minus minima. Asperiores molestiae deserunt minima magni quo ex similique reprehenderit necessitatibus.
-      </section>
     </>
   );
 }
 
-export default Parallax;
+export default BackgroundParallax;

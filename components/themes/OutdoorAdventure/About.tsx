@@ -1,7 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/themes/OutdoorAdventure/Hero";
-
-import Parallax from '@/components/common/Parallax'
 
 
 const content = {
@@ -16,7 +12,6 @@ const content = {
 const About = () => {
   return (
     <>
-      <Parallax />
     </>
   );
 }

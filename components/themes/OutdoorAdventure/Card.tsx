@@ -20,7 +20,7 @@ const Card = ({ cardContent }: cardContentProps) => {
   return (
     <div className='text-center'>
       <Img src={cardContent.imageSrc} alt="Card image" className="rounded-lg" containerClassName="h-44 md:h-96" />
-      <h5 className='text-black'>{cardContent.title}</h5>
+      <h3 className='text-black'>{cardContent.title}</h3>
       <p className='text-grey'>{cardContent.body}</p>
       <CTA className='mx-auto m-4' href={cardContent.cta.href} >{cardContent.cta.label}</CTA>
     </div>

@@ -6,10 +6,10 @@ import { FaCheckCircle } from "react-icons/fa";
 const ContactForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [successMessage, setSuccessMessage] = useState('');
-  const [sendErrorMessage, setSendErrorMessage] = useState(null);
+  const [sendErrorMessage, setSendErrorMessage] = useState('');
   const [sending, setSending] = useState(false);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: any) => {
     setSending(true);
     try {
       const response = await axios.post('https://pipedream.m.pipedream.net', data)

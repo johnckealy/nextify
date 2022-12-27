@@ -1,16 +1,13 @@
-import About from '@/components/themes/OutdoorAdventure/About'
-import { NextSeo } from 'next-seo'
+import AboutPage from '@/components/themes/OutdoorAdventure/About'
 
 
 
-export default function Home() {
+const About = () => {
   return (
     <>
-
-      <NextSeo title="Change me I'm the home page!" description="" />
-
-      <About />
-
+      <AboutPage />
     </>
-  )
+  );
 }
+
+export default About;

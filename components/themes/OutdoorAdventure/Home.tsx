@@ -6,6 +6,9 @@ import Heading from '@/components/themes/OutdoorAdventure/Heading'
 import Card from '@/components/themes/OutdoorAdventure/Card'
 import Block from '@/components/themes/OutdoorAdventure/Block'
 import Footer from '@/components/themes/OutdoorAdventure/Footer'
+import Parallax from '@/components/common/Parallax'
+
+
 
 const content = {
   hero: {
@@ -78,7 +81,7 @@ const Home = () => {
 
         {/* Hero block */}
         <div className=''>
-          <Img src={`https://source.unsplash.com/Bkci_8qcdvQ`} alt="title image" >
+          <Img src={`https://source.unsplash.com/Bkci_8qcdvQ`} alt="title image" priority>
             <div className='absolute inset-0 bg-black opacity-40' />
             <div className='relative md:px-32 py-20 md:py-64 '>
               <div className='flex flex-col justify-center items-center'>
@@ -108,6 +111,14 @@ const Home = () => {
 
 
       {/* Section with background image and Block */}
+      {/* <section className='md:my-20'>
+        <Parallax imgSrc="https://source.unsplash.com/s-y2HJElONo/w=1000" className="h-[500px]" >
+            <div className='container sgrid gap-0'>
+              <Block blockContent={content.block1} className="text-white" />
+            </div>
+        </Parallax>
+      </section> */}
+
       <section className='md:my-20'>
         <Img src={content.block1.image} alt="" className="">
           <div className='absolute inset-0 bg-black opacity-50' />

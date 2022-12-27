@@ -15,14 +15,14 @@ const useElementOnScreen = (options: Options): [React.RefObject<HTMLDivElement>,
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const makeAppear = (entries) => {
+  const makeAppear = (entries: any) => {
     const [entry] = entries;
     if (entry.isIntersecting) {
       setIsVisible(true);
     }
   };
 
-  const makeAppearRepeating = (entries) => {
+  const makeAppearRepeating = (entries: any) => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);
   };
