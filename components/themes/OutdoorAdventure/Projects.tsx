@@ -34,11 +34,9 @@ const Services = () => {
         </Img>
       </div>
 
-
       <section className='container md:mt-20 my-20'>
         <CarouselBlock carouselBlockContent={content.carouselBlock1} />
       </section>
-
 
       <Footer />
     </>

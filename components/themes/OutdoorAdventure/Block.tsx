@@ -19,7 +19,7 @@ interface Props {
 
 const Block = ({blockContent, className, children, useHr=true}: Props) => {
   return (
-    <div className={`${className} max-w-lg p-2 text-center md:text-left flex flex-col items-center md:items-start`}>
+    <div className={`${className} max-w-lg my-10 text-center md:text-left flex flex-col items-center md:items-start`}>
       {children}
       {useHr && <hr className='border-t-[4px] border-primary md:my-1 w-14' />}
       <p className=''>{blockContent.description}</p>
