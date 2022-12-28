@@ -13,6 +13,11 @@ const content = {
     title: "Water Sports",
     description: "Interdum exercitation penatibus, praesentium facilisi accusamus fermentum, sagittis.",
   },
+  carouselBlock2: {
+    category: 'Snow Adventure',
+    title: "Winter Sports",
+    description: "Interdum exercitation penatibus, praesentium facilisi accusamus fermentum, sagittis.",
+  },
 }
 
 
@@ -21,7 +26,7 @@ const Services = () => {
     <>
       <div className='relative'>
 
-        <Navbar className="z-10 md:text-white absolute top-0" />
+      <Navbar className="z-10 text-black  md:text-white md:absolute md:top-0" />
 
         {/* Hero block */}
         <Img src={content.hero.image} alt="title image" priority fullWidth>
@@ -36,6 +41,10 @@ const Services = () => {
 
       <section className='container md:mt-20 my-20'>
         <CarouselBlock carouselBlockContent={content.carouselBlock1} />
+      </section>
+
+      <section className='container md:mt-20 my-20'>
+        <CarouselBlock carouselBlockContent={content.carouselBlock2} />
       </section>
 
       <Footer />

@@ -35,7 +35,7 @@ const About = () => {
     <>
       <div className='relative'>
 
-        <Navbar className="z-10 md:text-white absolute top-0" />
+      <Navbar className="z-10 text-black  md:text-white md:absolute md:top-0" />
 
         {/* Hero block */}
         <Img src={content.hero.image} alt="title image" priority fullWidth>
