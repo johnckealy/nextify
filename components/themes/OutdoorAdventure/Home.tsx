@@ -122,10 +122,10 @@ const Home = () => {
 
       {/* Section with background image and Block */}
       <section className='md:my-20'>
-        <Img src={content.block1.image} alt="" className="" >
+        <Img src={content.block1.image} alt="" >
           <div className='absolute inset-0 bg-black opacity-50' />
-          <div className='relative py-10 md:px-32 md:py-44 '>
-            <div className='sgrid gap-0 '>
+          <div className='relative py-10'>
+            <div className='sgrid gap-0 container'>
               <Block blockContent={content.block1} className="text-white">
                 <h2>{content.block1.title}</h2>
               </Block>

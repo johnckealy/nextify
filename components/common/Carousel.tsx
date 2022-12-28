@@ -4,21 +4,17 @@ import Autoplay from 'embla-carousel-autoplay'
 import { BsCaretLeftSquareFill, BsCaretRightSquareFill } from 'react-icons/bs'
 import Img from '@/components/Img'
 
-const slides = [
-  {
-    imgSrc: 'https://source.unsplash.com/xCfHL21VpDk/800x400'
-  },
-  {
-    imgSrc: 'https://source.unsplash.com/21kWTfmnhqo/800x400'
-  },
-  {
-    imgSrc: 'https://source.unsplash.com/1OtUkD_8svc/800x400'
-  }
-]
+
 
 
 interface SlideProps {
   children: React.ReactNode
+}
+
+interface CarouselProps {
+  slides: {
+    imgSrc: string
+  }[]
 }
 
 const Slide = ({ children }: SlideProps) => {
@@ -31,7 +27,7 @@ const Slide = ({ children }: SlideProps) => {
 
 
 
-export const EmblaCarousel = () => {
+export const EmblaCarousel = ({slides}: CarouselProps) => {
   const autoplay = useRef(Autoplay());
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [autoplay.current])
 

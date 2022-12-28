@@ -1,6 +1,7 @@
 import Img from '@/components/Img';
 import Navbar from '@/components/Navbar'
-import CarouselBlock from '@/components/themes/OutdoorAdventure/CarouselBlock';
+import Block from '@/components/themes/OutdoorAdventure/Block';
+import Carousel from '@/components/common/Carousel';
 import Footer from '@/components/themes/OutdoorAdventure/Footer';
 
 const content = {
@@ -12,11 +13,33 @@ const content = {
     category: 'Adventure',
     title: "Water Sports",
     description: "Interdum exercitation penatibus, praesentium facilisi accusamus fermentum, sagittis.",
+    slides: [
+      {
+        imgSrc: 'https://source.unsplash.com/xCfHL21VpDk/800x400'
+      },
+      {
+        imgSrc: 'https://source.unsplash.com/21kWTfmnhqo/800x400'
+      },
+      {
+        imgSrc: 'https://source.unsplash.com/1OtUkD_8svc/800x400'
+      }
+    ]
   },
   carouselBlock2: {
     category: 'Snow Adventure',
     title: "Winter Sports",
     description: "Interdum exercitation penatibus, praesentium facilisi accusamus fermentum, sagittis.",
+    slides: [
+      {
+        imgSrc: 'https://source.unsplash.com/21kWTfmnhqo/800x400'
+      },
+      {
+        imgSrc: 'https://source.unsplash.com/1OtUkD_8svc/800x400'
+      },
+      {
+        imgSrc: 'https://source.unsplash.com/xCfHL21VpDk/800x400'
+      }
+    ]
   },
 }
 
@@ -26,7 +49,7 @@ const Services = () => {
     <>
       <div className='relative'>
 
-      <Navbar className="z-10 text-black  md:text-white md:absolute md:top-0" />
+        <Navbar className="z-10 text-black  md:text-white md:absolute md:top-0" />
 
         {/* Hero block */}
         <Img src={content.hero.image} alt="title image" priority fullWidth>
@@ -40,11 +63,31 @@ const Services = () => {
       </div>
 
       <section className='container md:mt-20 my-20'>
-        <CarouselBlock carouselBlockContent={content.carouselBlock1} />
+        <span className='border-b-[4px] border-primary pb-2'>{content.carouselBlock1.category}</span>
+        <Block
+          useHr={false}
+          className='max-w-3xl '
+          blockContent={content.carouselBlock1}>
+          <h2 className='my-0'>{content.carouselBlock1.title}</h2>
+        </Block>
+
+        <div className='max-w-[800px] mx-auto'>
+          <Carousel slides={content.carouselBlock1.slides}  />
+        </div>
       </section>
 
       <section className='container md:mt-20 my-20'>
-        <CarouselBlock carouselBlockContent={content.carouselBlock2} />
+        <span className='border-b-[4px] border-primary pb-2'>{content.carouselBlock2.category}</span>
+        <Block
+          useHr={false}
+          className='max-w-3xl '
+          blockContent={content.carouselBlock2}>
+          <h2 className='my-0'>{content.carouselBlock2.title}</h2>
+        </Block>
+
+        <div className='max-w-[800px] mx-auto'>
+          <Carousel slides={content.carouselBlock2.slides} />
+        </div>
       </section>
 
       <Footer />

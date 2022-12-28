@@ -29,7 +29,7 @@ body {
   h5 {
   }
   p {
-    @apply my-2 leading-7 whitespace-pre-wrap text-sm md:text-base text-grey;
+    @apply my-2 leading-7 whitespace-pre-wrap text-sm;
   }
   .sgrid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center;
