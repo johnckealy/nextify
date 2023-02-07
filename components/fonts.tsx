@@ -1,16 +1,16 @@
-import { Montserrat, Noto_Sans } from '@next/font/google'
+import { Lora, Poppins } from '@next/font/google'
 
 
-const notosans = Noto_Sans({
+const fontPrimary = Poppins({
   subsets: ['latin'],
-  weight: "400",
-  variable: '--font-notosans',
+  weight: ['400', '700'],
+  variable: '--font-primary',
 })
 
-const montserrat = Montserrat({
+const fontSecondary = Lora({
   subsets: ['latin'],
-  weight: ["400", "700"],
-  variable: '--font-montserrat',
+  weight: 'variable',
+  variable: '--secondary-font',
 })
 
-export { notosans, montserrat };
+export { fontPrimary, fontSecondary };

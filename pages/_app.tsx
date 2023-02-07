@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { notosans, montserrat } from '@/components/fonts'
+import { fontPrimary, fontSecondary } from '@/components/fonts'
 import { DefaultSeo } from 'next-seo';
 import SEO from '@/components/Seo';
 import Head from 'next/head'
@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <DefaultSeo {...SEO} />
-      <main className={`${montserrat.variable}  ${notosans.variable} font-sans`}>
+      <main className={`${fontPrimary.variable} ${fontSecondary.variable} font-sans`}>
         <Component {...pageProps} />
       </main>
     </>

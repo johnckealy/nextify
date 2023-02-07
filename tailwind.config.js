@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-notosans)', ...fontFamily.sans],
-        montserrat: ['var(--font-montserrat)', ...fontFamily.sans],
+        primary: ['var(--font-primary)', ...fontFamily.sans],
+        secondary: ['var(--secondary-font)', ...fontFamily.sans],
       },
       colors: {
         grey: "#404040",
@@ -36,6 +36,13 @@ module.exports = {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
           primary: "#dc043a",
+          secondary: "#ffffff",
+          accent: "#c19655",
+          info: "#191919",
+          success: "#191919",
+          warning: "#191919",
+          error: "#191919",
+          base: "#191919",
         },
       },
       'dark'
