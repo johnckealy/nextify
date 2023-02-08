@@ -12,7 +12,7 @@ interface Props {
 }
 
 
-const Img = ({ src, alt, className, containerClassName, priority, children, fullWidth }: Props) => {
+const Img = ({ src, alt, className, containerClassName, priority, children, fullWidth, draggable }: Props) => {
   const [isReady, setisReady] = useState(true);
 
   return (
@@ -25,6 +25,7 @@ const Img = ({ src, alt, className, containerClassName, priority, children, full
         onLoadingComplete={() => setisReady(true)}
         fill
         priority={priority}
+        draggable={draggable}
       />
       {children}
     </div>

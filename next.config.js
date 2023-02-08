@@ -15,7 +15,7 @@ const nextConfig = {
     defaultLocale: "en",
   },
   images: {
-    domains: ['source.unsplash.com'],
+    domains: ['source.unsplash.com', 'unsplash.com'],
   },
 }
 

@@ -16,16 +16,18 @@ module.exports = {
       colors: {
         grey: "#404040",
         darkgrey: "#ffffff",
-        offwhite: "#ececec"
+        offwhite: "#ececec",
+        primarybg: "#274a83",
+        secondarybg: "#404040",
       }
     },
     container: {
       padding: {
         DEFAULT: '1rem',
         sm: '2rem',
-        lg: '3rem',
-        xl: '3rem',
-        '2xl': '5rem',
+        lg: '4rem',
+        xl: '7rem',
+        '2xl': '10rem',
       },
       center: true,
     },
@@ -37,7 +39,6 @@ module.exports = {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
           primary: "#274a83",
-          primaryContent: "#ffffff",
           secondary: "#ffffff",
           accent: "#c19655",
           info: "#e6f0ff",

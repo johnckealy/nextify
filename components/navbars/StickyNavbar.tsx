@@ -9,6 +9,7 @@ import CTA from 'components/CTA';
 
 interface Props {
   navItems: any;
+  active: string;
 }
 
 interface MobileProps {
@@ -16,7 +17,6 @@ interface MobileProps {
   toggleOpen: () => void;
   isOpen: boolean;
 }
-
 
 const containerVariants: Variants = {
   hidden: {
@@ -52,29 +52,21 @@ const menuItemVariants: Variants = {
 }
 
 
-const Logo = ({ logoWidth }: {logoWidth: String}) => {
-  return (
-    <Link href="/" className={`h-full w-${logoWidth} mr-auto`}>
-      <Img src="/logo.svg" alt="Company Logo" className="" containerClassName="" priority />
-    </Link>
-  )
-}
-
-
-
 const MobileNavbar = ({ navItems, isOpen, toggleOpen }: MobileProps) => {
   return (
-    <div className='md:hidden w-full'>
-      <div className={`h-full flex p-4 bg-white ${isOpen ? '' : ''}`} onClick={toggleOpen}>
-        <Logo logoWidth="24" />
-        {isOpen ?
-          <GrClose className='navbtn' /> :
-          <FiMenu className='navbtn' />}
+    <div className={`md:hidden ${isOpen ? 'bg-secondarybg' : ''}  w-full h-full`}>
+      <div className={`h-full flex p-4 ${isOpen ? '' : ''}`} >
+        <Link href="/" className={`h-auto w-32 mr-auto`}>
+          <Img src="/logo.svg" alt="Company Logo" className={isOpen ? 'invert' : ''} containerClassName="" priority />
+        </Link>
+        <div onClick={toggleOpen}>
+          {isOpen ? <GrClose className={`navbtn  ${isOpen ? 'invert' : ''} `} /> : <FiMenu className='navbtn' />}
+        </div>
       </div>
 
       <motion.ul
         variants={containerVariants}
-        className={`bg-primary flex flex-col ${isOpen ? '' : ''} text-2xl text-center`}
+        className={`bg-secondarybg flex flex-col ${isOpen ? '' : ''} text-2xl text-center`}
         animate={`${isOpen ? 'show' : 'hidden'}`}
         initial="hidden">
         <div className='py-10'>
@@ -86,22 +78,23 @@ const MobileNavbar = ({ navItems, isOpen, toggleOpen }: MobileProps) => {
             </Link>
           ))}
         </div>
-
       </motion.ul>
     </div>
   );
 };
 
 
-const DesktopNavbar = ({ navItems }: Props) => {
+const DesktopNavbar = ({ navItems, active }: Props) => {
   return (
-    <div className='hidden w-full h-auto md:flex md:justify-end md:items-center'>
-      <Logo logoWidth="32" />
-      <ul className='flex gap-8 mx-10 items-center'>
+    <div className='hidden p-6 w-full h-auto md:flex md:justify-end md:items-center'>
+      <Link href="/" className={`h-full w-32 mr-auto`}>
+        <Img src="/logo.svg" alt="Company Logo" className="" containerClassName="" priority />
+      </Link>
+      <ul className='flex gap-4 mx-10 items-center'>
         {navItems.links.map((link: any) => {
           return (
-            <Link href='/'>
-              <li key={link.href} className='p-2 rounded-lg hover:bg-offwhite'>
+            <Link href={link.href}>
+              <li key={link.href} className={`p-2 rounded-lg hover:bg-offwhite ${active == link.href ? 'bg-offwhite' : ''} `}>
                 <span className=''>{link.label}</span>
               </li>
             </Link>
@@ -119,14 +112,14 @@ const DesktopNavbar = ({ navItems }: Props) => {
 };
 
 
-const StickyNavbar = ({ navItems }: Props) => {
+const StickyNavbar = ({ navItems, active }: Props) => {
 
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   return (
-    <nav className="sticky top-0 flex justify-between p-6 h-auto">
+    <nav className="sticky top-0 font-primary flex justify-between max-w-4xl mx-auto h-auto">
       <MobileNavbar navItems={navItems} isOpen={isOpen} toggleOpen={toggleOpen} />
-      <DesktopNavbar navItems={navItems} />
+      <DesktopNavbar navItems={navItems} active={active} />
     </nav>
   );
 }

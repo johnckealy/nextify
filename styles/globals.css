@@ -33,6 +33,6 @@
     @apply grow-0 shrink-0 basis-full ;
   }
   .navbtn {
-    @apply w-12 h-12 ring ring-primary p-2 rounded-full ml-auto;
+    @apply w-12 h-12 outline p-2 rounded-full ml-auto;
   }
 }
