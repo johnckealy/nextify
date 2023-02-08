@@ -37,7 +37,9 @@ export default function Home({ navItems }: Props) {
 
       <Navbar navItems={navItems} active="/" />
 
-      <Carousel images={images} />
+      <div className="w-[full] md:w-[500px] h-[400px] md:h-[400px] mx-auto">
+        <Carousel images={images} />
+      </div>
 
       <div className='h-screen bg-gray-300' />
       <div className='h-screen bg-gray-300' />

@@ -14,8 +14,9 @@ module.exports = {
         secondary: ['var(--secondary-font)', ...fontFamily.sans],
       },
       colors: {
-        grey: "#404040",
+        grey: "#5d5d5d",
         darkgrey: "#ffffff",
+
         offwhite: "#ececec",
         primarybg: "#274a83",
         secondarybg: "#404040",

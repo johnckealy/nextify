@@ -9,6 +9,7 @@ interface Props {
   containerClassName?: string;
   children?: React.ReactNode;
   fullWidth?: boolean;
+  draggable?: boolean;
 }
 
 
