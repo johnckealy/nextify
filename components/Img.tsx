@@ -16,12 +16,12 @@ const Img = ({ src, alt, className, containerClassName, priority, children, full
   const [isReady, setisReady] = useState(true);
 
   return (
-    <div className={`relative ${containerClassName}`}>
+    <div className={`relative h-full ${containerClassName}`}>
       <Image
         src={src}
         alt={alt}
         sizes={`(max-width: 768px) 100vw, (max-width: 1200px) 50vw, ${fullWidth ? '100vw' : '40vw'} `}
-        className={`${className} object-cover transition duration-500 ${isReady ? 'blur-0' : 'blur-xl bg-gray-400'}`}
+        className={`${className} object-contain transition duration-500 ${isReady ? 'blur-0' : 'blur-xl bg-gray-400'}`}
         onLoadingComplete={() => setisReady(true)}
         fill
         priority={priority}

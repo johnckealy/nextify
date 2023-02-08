@@ -1,50 +1,25 @@
 import { NextSeo } from 'next-seo'
 import ParallaxHero from '@/components/themes/BaseThemeTemplates/ParallaxHero'
-import { FaChevronDown } from "react-icons/fa"
-import Link from 'next/link'
-import { Gallery3Images } from '@/components/themes/BaseThemeTemplates/Gallery'
 import Navbar from '@/components/navbars/StickyNavbar'
+import ChevronDownScroller from '@/components/scrollers/ChevronDownScroller'
 
 
-const navItems = {
-  cta: {
-    label: 'Take Action',
-    href: '/'
-  },
-  links: [
-    {
-      label: 'Home',
-      href: '/'
-    },
-    {
-      label: 'About',
-      href: '/about'
-    },
-    {
-      label: 'Services',
-      href: '/services'
-    },
-    {
-      label: 'Projects',
-      href: '/projects'
-    },
-  ]
+
+interface Props {
+  navItems: {
+    cta: {
+      label: string
+      href: string
+    }
+    links: {
+      label: string
+      href: string
+    }[]
+  }
 }
 
 
-const ChevronDownScroll = () => {
-  return (
-    <div className=" bg-white flex justify-center items-center mx-auto">
-      <div className='bg-white rounded-[50%] px-24 py-8 -translate-y-12'>
-        <Link href="/#hero-image">
-          <FaChevronDown className="w-12 h-12" />
-        </Link>
-      </div>
-    </div>
-  )
-}
-
-export default function Home() {
+export default function Home({ navItems }: Props) {
   return (
     <>
 
@@ -52,13 +27,46 @@ export default function Home() {
 
       <Navbar navItems={navItems} />
 
-      <ParallaxHero />
+      <h3>Hello</h3>
 
-      {/* <ChevronDownScroll /> */}
-
-      {/* <Gallery3Images  /> */}
-
-      <div className='h-screen bg-gray-300'/>
+      <div className='h-screen bg-gray-300' />
+      <div className='h-screen bg-gray-300' />
     </>
   )
+}
+
+
+
+
+export async function getStaticProps() {
+  const navItems = {
+    cta: {
+      label: 'Take Action',
+      href: '/'
+    },
+    links: [
+      {
+        label: 'Home',
+        href: '/'
+      },
+      {
+        label: 'About',
+        href: '/about'
+      },
+      {
+        label: 'Services',
+        href: '/services'
+      },
+      {
+        label: 'Projects',
+        href: '/projects'
+      },
+    ]
+  }
+
+  return {
+    props: {
+      navItems
+    }
+  }
 }

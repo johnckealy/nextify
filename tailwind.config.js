@@ -15,7 +15,8 @@ module.exports = {
       },
       colors: {
         grey: "#404040",
-        darkgrey: "#191919"
+        darkgrey: "#ffffff",
+        offwhite: "#ececec"
       }
     },
     container: {
@@ -35,14 +36,14 @@ module.exports = {
       {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          primary: "#dc043a",
+          primary: "#274a83",
+          primaryContent: "#ffffff",
           secondary: "#ffffff",
           accent: "#c19655",
-          info: "#191919",
+          info: "#e6f0ff",
           success: "#191919",
           warning: "#191919",
           error: "#191919",
-          base: "#191919",
         },
       },
       'dark'

@@ -16,10 +16,11 @@
 
 @layer base {
   html {
+    /* does this work? */
     @apply scroll-smooth;
   }
   body {
-    @apply h-full max-w-[100vw] overflow-x-auto font-primary;
+    @apply h-full max-w-[100vw] overflow-x-auto ;
   }
   h1 {
   }
@@ -30,5 +31,8 @@
   }
   .embla__slide {
     @apply grow-0 shrink-0 basis-full ;
+  }
+  .navbtn {
+    @apply w-12 h-12 ring ring-primary p-2 rounded-full ml-auto;
   }
 }
