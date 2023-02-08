@@ -3,7 +3,7 @@ import { FiMenu } from 'react-icons/fi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from 'react';
 import Link from 'next/link';
-import CTA from '@/components/common/CTA';
+import CTA from '@/components/CTA';
 import Image from 'next/image';
 
 const navItems = {

@@ -93,7 +93,7 @@ const DesktopNavbar = ({ navItems, active }: Props) => {
       <ul className='flex gap-4 mx-10 items-center'>
         {navItems.links.map((link: any) => {
           return (
-            <Link href={link.href}>
+            <Link key={link.href} href={link.href}>
               <li key={link.href} className={`p-2 rounded-lg hover:bg-offwhite ${active == link.href ? 'bg-offwhite' : ''} `}>
                 <span className=''>{link.label}</span>
               </li>

@@ -1,5 +1,5 @@
 import React from 'react'
-import CTA from '@/components/common/CTA';
+import CTA from '@/components/CTA';
 
 
 interface Props {

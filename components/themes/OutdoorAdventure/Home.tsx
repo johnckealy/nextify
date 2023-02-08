@@ -1,5 +1,5 @@
 import Img from '@/components/Img'
-import CTA from '@/components/common/CTA'
+import CTA from '@/components/CTA'
 import Navbar from '@/components/Navbar'
 import QuoteBlock from '@/components/themes/OutdoorAdventure/QuoteBlock'
 import Heading from '@/components/themes/OutdoorAdventure/Heading'

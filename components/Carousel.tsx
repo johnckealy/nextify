@@ -78,7 +78,7 @@ export const VirtualizedPage = ({ images, children }: VirtualizedPageProps) => {
   useEffect(() => {
     const controls = animate(x, calculateNewX(), transition);
     return controls.stop;
-  }, [index]);
+  }, [index, x, calculateNewX, transition]);
 
   return (
     <>
@@ -98,7 +98,7 @@ export const VirtualizedPage = ({ images, children }: VirtualizedPageProps) => {
       <div className="flex justify-center gap-3 text-grey" >
         <button onClick={() => setIndex(index - 1)} className="btn btn-ghost"><FaChevronLeft className="w-6 h-6" /></button>
         {images.map((image, i) => {
-          return <button onClick={() => setIndex(i)} className={index == i ? 'text-accent' : ''}>O</button>
+          return <button key={i} onClick={() => setIndex(i)} className={index == i ? 'text-accent' : ''}>O</button>
         })}
         <button onClick={() => setIndex(index + 1)} className="btn btn-ghost"><FaChevronRight className="w-6 h-6" /></button>
       </div>

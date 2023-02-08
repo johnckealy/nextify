@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from '@/components/Img';
-import CTA from '@/components/common/CTA';
+import CTA from '@/components/CTA';
 import Image from 'next/image';
 
 interface cardContentProps {
