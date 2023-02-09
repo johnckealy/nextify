@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo'
 import ParallaxHero from '@/components/themes/BaseThemeTemplates/ParallaxHero'
 import Navbar from '@/components/navbars/StickyNavbar'
 import Carousel from '@/components/Carousel'
-
+import SideBySide from '@/components/sections/SideBySide'
 
 interface Props {
   navItems: {
@@ -14,11 +14,12 @@ interface Props {
       label: string
       href: string
     }[]
-  }
+  },
+  sectionContent: any
 }
 
 
-export default function Home({ navItems }: Props) {
+export default function Home({ navItems, sectionContent }: Props) {
 
 
 
@@ -37,11 +38,13 @@ export default function Home({ navItems }: Props) {
 
       <Navbar navItems={navItems} active="/" />
 
-      <div className="w-[full] md:w-[500px] h-[400px] md:h-[400px] mx-auto">
+      {/* <div className="w-[full] md:w-[500px] h-[400px] md:h-[400px] mx-auto pb-24">
         <Carousel images={images} />
-      </div>
-
+      </div> */}
       <div className='h-screen bg-gray-300' />
+
+      <SideBySide content={sectionContent} />
+
       <div className='h-screen bg-gray-300' />
     </>
   )
@@ -76,9 +79,15 @@ export async function getStaticProps() {
     ]
   }
 
+  const sectionContent = {
+    header: 'Your Instructor',
+    body: 'Noi is the main teacher. \nHe has great knowledge of the cuisine to make sure that you’ll go home understanding all the ‘whys’ and ‘why nots’ of Thai cuisine. \nHis English is brilliant, never lacking in humor either!'
+  }
+
   return {
     props: {
-      navItems
+      navItems,
+      sectionContent
     }
   }
 }

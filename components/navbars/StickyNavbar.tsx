@@ -66,7 +66,7 @@ const MobileNavbar = ({ navItems, isOpen, toggleOpen }: MobileProps) => {
 
       <motion.ul
         variants={containerVariants}
-        className={`bg-secondarybg flex flex-col ${isOpen ? '' : ''} text-2xl text-center`}
+        className={`bg-secondarybg flex flex-col ${isOpen ? '' : 'hidden'} text-2xl text-center`}
         animate={`${isOpen ? 'show' : 'hidden'}`}
         initial="hidden">
         <div className='py-10'>
@@ -117,7 +117,7 @@ const StickyNavbar = ({ navItems, active }: Props) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   return (
-    <nav className="sticky top-0 font-primary flex justify-between max-w-4xl mx-auto h-auto">
+    <nav className="sticky top-0 font-primary flex justify-between max-w-4xl mx-auto h-auto z-50 bg-white">
       <MobileNavbar navItems={navItems} isOpen={isOpen} toggleOpen={toggleOpen} />
       <DesktopNavbar navItems={navItems} active={active} />
     </nav>

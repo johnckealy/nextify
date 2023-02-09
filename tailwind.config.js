@@ -39,13 +39,13 @@ module.exports = {
       {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          primary: "#274a83",
-          secondary: "#ffffff",
-          accent: "#c19655",
+          primary: "#b8381f",
+          secondary: "#9bcc3f",
+          accent: "#e6f0ff",
           info: "#e6f0ff",
-          success: "#191919",
-          warning: "#191919",
-          error: "#191919",
+          success: "#e6f0ff",
+          warning: "#e6f0ff",
+          error: "#e6f0ff",
         },
       },
       'dark'
