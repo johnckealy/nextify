@@ -70,7 +70,7 @@ const MobileNavbar = ({ navItems, isOpen, toggleOpen }: MobileProps) => {
         animate={`${isOpen ? 'show' : 'hidden'}`}
         initial="hidden">
         <div className='py-10'>
-          {navItems.links.map((link: any) => (
+          {navItems.navlinks.map((link: any) => (
             <Link key={link.href} href={link.href}>
               <motion.li key={link.href} className='my-6 text-darkgrey pb-2' variants={menuItemVariants}>
                 <span className='border-[#a9a0a0] pb-3 border-b-[1px]'>{link.label}</span>
@@ -91,7 +91,7 @@ const DesktopNavbar = ({ navItems, active }: Props) => {
         <Img src="/logo.svg" alt="Company Logo" className="" containerClassName="" priority />
       </Link>
       <ul className='flex gap-4 mx-10 items-center'>
-        {navItems.links.map((link: any) => {
+        {navItems.navlinks.map((link: any) => {
           return (
             <Link key={link.href} href={link.href}>
               <li key={link.href} className={`p-2 rounded-lg hover:bg-offwhite ${active == link.href ? 'bg-offwhite' : ''} `}>
@@ -103,7 +103,7 @@ const DesktopNavbar = ({ navItems, active }: Props) => {
       </ul>
 
       <div className='flex items-center'>
-        <CTA href="/">
+        <CTA href={navItems.cta.href}>
           {navItems.cta.label}
         </CTA>
       </div>

@@ -20,7 +20,8 @@
       "@/content/*": ["content/*"],
       "@/styles/*": ["styles/*"],
       "@/plugins/*": ["plugins/*"],
-      "@/themes/*": ["themes/*"]
+      "@/themes/*": ["themes/*"],
+      "@/.tina/*": [".tina/*"]
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

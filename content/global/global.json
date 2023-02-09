@@ -1,0 +1,38 @@
+{
+  "navbar": {
+    "cta": {
+      "label": "Book a class",
+      "href": "booking"
+    },
+    "navlinks": [
+      {
+        "label": "Home",
+        "href": ""
+      },
+      {
+        "label": "Cooking Classes",
+        "href": "cooking-classes"
+      },
+      {
+        "label": "Daily Menu",
+        "href": "daily-menu"
+      },
+      {
+        "label": "Lanta Animal Welfare",
+        "href": "lanta-animal-welfare"
+      }
+    ]
+  },
+  "footer": {
+    "addressLine1": "629 Mo 2, Saladan",
+    "addressLine2": "Ko Lanta, Krabi",
+    "addressLine3": "Thailand, 81150",
+    "email": "timeforlime@email.com",
+    "phone": "Mobile/Whatsapp: +66 611389499",
+    "googleMapsLink": "https://www.google.com/maps/place/Time+For+Lime/@7.5908021,99.0349999,17z/data=!3m1!4b1!4m5!3m4!1s0x304e033f7dd6b47b:0x5b670e284bb15056!8m2!3d7.5907968!4d99.0371886",
+    "facebookLink": "https://www.facebook.com/TimeforLimeKohLanta",
+    "instagramLink": "https://www.instagram.com/timeforlime_kohlanta/?hl=en",
+    "youtubeLink": "https://www.youtube.com/channel/UCky5eT-21oKiONc-7q5y9cw",
+    "tripadvisorLink": "https://www.tripadvisor.com/Attraction_Review-g303905-d1223357-Reviews-Time_For_Lime-Ko_Lanta_Krabi_Province.html"
+  }
+}
