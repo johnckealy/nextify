@@ -4,22 +4,23 @@ import Navbar from '@/components/navbars/StickyNavbar'
 import Carousel from '@/components/Carousel'
 import SideBySide from '@/components/sections/SideBySide'
 import { getGlobalContent } from '@/.tina/tinaHelpers'
-
+import { client } from '@/.tina/__generated__/client'
+import { useTina } from 'tinacms/dist/react'
 
 interface Props {
-  globalContent: any
+  globalContent: any,
+  sectionContent: any
 }
 
 
-export default function Home({ globalContent }: Props) {
+export default function Home({ globalContent, sectionContent }: Props) {
 
-  const images = [
-    "https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=640",
-    "https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=640",
-    "https://unsplash.com/photos/phIFdC6lA4E/download?force=true&w=640",
-  ];
 
-  console.log(globalContent)
+  const { data } = useTina({
+    query: sectionContent.query,
+    variables: sectionContent.variables,
+    data: sectionContent.data,
+  })
 
   return (
     <>
@@ -32,10 +33,8 @@ export default function Home({ globalContent }: Props) {
       {/* <div className="w-[full] md:w-[500px] h-[400px] md:h-[400px] mx-auto pb-24">
         <Carousel images={images} />
       </div> */}
-      <div className='h-screen bg-gray-300' />
 
-      {/* <SideBySide content={sectionContent} /> */}
-
+      <SideBySide content={data.sections.sideBySideSection} />
       <div className='h-screen bg-gray-300' />
     </>
   )
@@ -50,9 +49,19 @@ export const getStaticProps = async () => {
 
   const globalContent = await getGlobalContent()
 
+
+  const sectionQuery = await client.queries.sections({ relativePath: 'section-sbs.mdx' })
+  const sectionContent =  {
+    data: sectionQuery.data,
+    query: sectionQuery.query,
+    variables: sectionQuery.variables,
+  }
+
+
   return {
     props: {
       globalContent,
+      sectionContent
     }
   }
 }

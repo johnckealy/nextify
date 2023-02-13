@@ -24,10 +24,9 @@ export default defineConfig({
         name: "global",
         path: "content/global",
         format: "json",
-        // ui: {
-        //   router: () => `/`,
-        // },
         fields: [
+
+          // Navbar
           {
             type: "object",
             label: "Navbar",
@@ -78,6 +77,8 @@ export default defineConfig({
               },
             ],
           },
+
+          // Footer
           {
             type: "object",
             label: "Footer",
@@ -134,7 +135,65 @@ export default defineConfig({
                 name: "tripadvisorLink",
               },
             ],
-          }
+          },
+
+        ],
+      },
+
+      // <SideBySide> component
+      {
+
+
+        label: "Sections",
+        name: "sections",
+        path: "content/sections",
+        format: "mdx",
+        fields: [
+          {
+            type: "object",
+            label: "Side By Side Section",
+            name: "sideBySideSection",
+            fields: [
+              {
+                type: "string",
+                label: "Header",
+                name: "header",
+              },
+              {
+                type: "string",
+                label: "Subheader",
+                name: "subheader",
+              },
+              {
+                type: "rich-text",
+                label: "Body",
+                name: "body",
+                isBody: true,
+                templates: [
+                  {
+                    name: "ColoredText",
+                    label: "ColoredText",
+                    fields: [
+                      {
+                        name: "inputColor",
+                        label: "Color",
+                        type: "string",
+                        options: [
+                          "primary",
+                          "secondary",
+                        ]
+                      },
+                      {
+                        name: "children",
+                        label: "Text",
+                        type: "string",
+                      }
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
         ],
       },
     ],
