@@ -112,7 +112,7 @@ const DesktopNavbar = ({ navItems, active }: Props) => {
 };
 
 
-const StickyNavbar = ({ navItems, active }: Props) => {
+const Navbar = ({ navItems, active }: Props) => {
 
   const [isOpen, toggleOpen] = useCycle(false, true);
 
@@ -124,4 +124,4 @@ const StickyNavbar = ({ navItems, active }: Props) => {
   );
 }
 
-export default StickyNavbar;
+export default Navbar;

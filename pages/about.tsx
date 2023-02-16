@@ -1,4 +1,4 @@
-import Navbar from '@/components/navbars/StickyNavbar'
+import Navbar from '@/components/navbars/Navbar'
 
 
 

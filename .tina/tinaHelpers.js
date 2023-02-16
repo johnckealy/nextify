@@ -2,8 +2,8 @@ import { client } from '@/.tina/__generated__/client'
 
 
 
-const getGlobalContent = async () => {
-  const globalContent = await client.queries.global({ relativePath: 'global.json' })
+const getTinaContent = async (collection, contentFile) => {
+  const globalContent = await client.queries[collection]({ relativePath: contentFile })
   return {
     data: globalContent.data,
     query: globalContent.query,
@@ -11,4 +11,4 @@ const getGlobalContent = async () => {
   }
 }
 
-export { getGlobalContent }
+export { getTinaContent }

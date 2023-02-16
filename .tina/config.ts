@@ -56,17 +56,16 @@ export default defineConfig({
                 label: "Nav Links",
                 name: "navlinks",
                 list: true,
-                // ui: {
-                //   itemProps: (item) => {
-                //     return { label: item?.label };
-                //   },
-                // },
+                ui: {
+                  itemProps: (item) => {
+                    return { label: item?.label };
+                  },
+                },
                 fields: [
                   {
                     type: "string",
                     label: "Link Label",
                     name: "label",
-                    // required: true,
                   },
                   {
                     type: "string",
@@ -161,7 +160,6 @@ export default defineConfig({
                 type: "string",
                 label: "Title",
                 name: "title",
-
               },
               {
                 type: "rich-text",
@@ -169,17 +167,6 @@ export default defineConfig({
                 name: "section",
                 isBody: true,
                 templates: [
-                  {
-                    name: "TestComp",
-                    label: "TestComp",
-                    fields: [
-                      {
-                        name: "inputColor",
-                        label: "Color",
-                        type: "string",
-                      }
-                    ],
-                  },
                   {
                     name: "SideBySide",
                     label: "SideBySide",
@@ -201,7 +188,6 @@ export default defineConfig({
                       },
                     ],
                   },
-
                   {
                     label: "Carousel",
                     name: "Carousel",
@@ -231,36 +217,3 @@ export default defineConfig({
     ]
   }
 });
-
-
-
-          // // <Carousel> component
-          // {
-          //   label: "Carousel",
-          //   name: "carousel",
-          //   path: "content/carousel",
-          //   format: "json",
-          //   ui: {
-          //     router: ({ document }) => {
-          //       return '/'
-          //     },
-          //   },
-          //   fields: [
-          //     {
-          //       type: "object",
-          //       label: "Carousel",
-          //       name: "carousel",
-          //       list: true,
-          //       fields: [
-          //         {
-          //           type: "image",
-          //           label: "Carousel Image",
-          //           name: "carouselImage",
-          //         }
-          //       ]
-          //     }
-          //   ]
-          // }
-        // ],
-      // },
-// });

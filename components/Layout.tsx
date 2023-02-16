@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/navbars/Navbar'
 import Footer from '@/components/Footer'
 import React from 'react'
 
@@ -10,9 +10,9 @@ interface LayoutProps {
 const Layout = ({ globalContent, children }: LayoutProps) => {
   return (
     <>
-      <Navbar navbarContent={globalContent.navbar} />
+      <Navbar navItems={globalContent.data.global.navbar} active="/" />
       {children}
-      <Footer footerContent={globalContent.footer} />
+      <Footer footerContent={globalContent.data.global.footer} />
     </>
   );
 }

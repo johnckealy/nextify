@@ -70,8 +70,6 @@ const Hero = () => {
           <CTA label="View Sample Offers" href="/" />
         </div>
       </HeroBg>
-
-      <div className="h-screen bg-gray-300"></div>
     </>
   )
 }

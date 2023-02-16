@@ -114,16 +114,15 @@ export const VirtualizedPage = ({ images, children }: VirtualizedPageProps) => {
 };
 
 
-export default function Carousel({ carouselImages }: any) {
-  const imageList = carouselImages.map((image: any) => image.carouselImage);
-
+const Carousel = ({ carouselImages }: any) =>  {
+  const imageList = carouselImages?.map((image: any) => image.carouselImage);
+  if (!imageList) return <div/>
   return (
     <div className="w-[full] md:w-[500px] h-[400px] md:h-[400px] mx-auto pb-24">
       <VirtualizedPage images={imageList}>
         {({ index }) => {
           const modulo = index % imageList.length;
           const imageIndex = modulo < 0 ? imageList.length + modulo : modulo;
-          console.log(imageIndex)
           return (
             <Img src={imageList[imageIndex]}
               className="w-full"
@@ -136,3 +135,5 @@ export default function Carousel({ carouselImages }: any) {
     </div>
   );
 }
+
+export default Carousel;
