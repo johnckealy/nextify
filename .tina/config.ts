@@ -13,8 +13,8 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
       publicFolder: "public",
+      mediaRoot: 'uploads',
     },
   },
   schema: {
@@ -56,11 +56,11 @@ export default defineConfig({
                 label: "Nav Links",
                 name: "navlinks",
                 list: true,
-                ui: {
-                  itemProps: (item) => {
-                    return { label: item?.label };
-                  },
-                },
+                // ui: {
+                //   itemProps: (item) => {
+                //     return { label: item?.label };
+                //   },
+                // },
                 fields: [
                   {
                     type: "string",
@@ -136,66 +136,131 @@ export default defineConfig({
               },
             ],
           },
-
         ],
       },
 
-      // <SideBySide> component
+      // Page component
       {
-
-
-        label: "Sections",
-        name: "sections",
-        path: "content/sections",
+        label: "Pages",
+        name: "pages",
+        path: "content/pages",
         format: "mdx",
         fields: [
           {
             type: "object",
-            label: "Side By Side Section",
-            name: "sideBySideSection",
+            label: "Sections",
+            name: "sections",
+            list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: item?.title };
+              },
+            },
             fields: [
               {
                 type: "string",
-                label: "Header",
-                name: "header",
-              },
-              {
-                type: "string",
-                label: "Subheader",
-                name: "subheader",
+                label: "Title",
+                name: "title",
+
               },
               {
                 type: "rich-text",
-                label: "Body",
-                name: "body",
+                label: "Section",
+                name: "section",
                 isBody: true,
                 templates: [
                   {
-                    name: "ColoredText",
-                    label: "ColoredText",
+                    name: "TestComp",
+                    label: "TestComp",
                     fields: [
                       {
                         name: "inputColor",
                         label: "Color",
                         type: "string",
-                        options: [
-                          "primary",
-                          "secondary",
-                        ]
-                      },
-                      {
-                        name: "children",
-                        label: "Text",
-                        type: "string",
                       }
                     ],
                   },
+                  {
+                    name: "SideBySide",
+                    label: "SideBySide",
+                    fields: [
+                      {
+                        type: "string",
+                        label: "Header",
+                        name: "header",
+                      },
+                      {
+                        type: "string",
+                        label: "Subheader",
+                        name: "subheader",
+                      },
+                      {
+                        type: "string",
+                        label: "Body",
+                        name: "body",
+                      },
+                    ],
+                  },
+
+                  {
+                    label: "Carousel",
+                    name: "Carousel",
+                    fields: [
+                      {
+                        type: "object",
+                        label: "Carousel Images",
+                        name: "carouselImages",
+                        list: true,
+                        fields: [
+                          {
+                            type: "image",
+                            label: "Carousel Image",
+                            name: "carouselImage",
+                          }
+                        ]
+                      }
+                    ]
+                  }
+
                 ],
               },
             ],
           },
         ],
       },
-    ],
-  },
+    ]
+  }
 });
+
+
+
+          // // <Carousel> component
+          // {
+          //   label: "Carousel",
+          //   name: "carousel",
+          //   path: "content/carousel",
+          //   format: "json",
+          //   ui: {
+          //     router: ({ document }) => {
+          //       return '/'
+          //     },
+          //   },
+          //   fields: [
+          //     {
+          //       type: "object",
+          //       label: "Carousel",
+          //       name: "carousel",
+          //       list: true,
+          //       fields: [
+          //         {
+          //           type: "image",
+          //           label: "Carousel Image",
+          //           name: "carouselImage",
+          //         }
+          //       ]
+          //     }
+          //   ]
+          // }
+        // ],
+      // },
+// });
